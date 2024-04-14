@@ -1,0 +1,16 @@
+!pip install ngrok
+!pip install pyngrok
+
+!ngrok update
+#!wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+#!unzip ngrok-stable-linux-amd64.zip
+!ngrok authtoken ----YOUR NGROK TOKEN------
+
+
+!streamlit run app.py&>/dev/null&
+!pgrep streamlit
+
+from pyngrok import ngrok
+
+public_url =ngrok.connect(addr='8501')
+print("Public url can be accessed at:",public_url)
